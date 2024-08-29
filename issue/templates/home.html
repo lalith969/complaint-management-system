@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" 
+  integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" 
+  integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" 
+integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" 
+integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+<style>
+  .aa{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color:#f1f1f1;
+  font-size: x-large ;
+}
+.a1
+{
+  margin-left: 25%;
+  /* margin-top: 200px; */
+  font-size: 50px;
+  font-family: Tahoma, Verdana, sans-serif;   
+} 
+.cc{
+  color:rgb(0, 0, 0);
+}
+
+.bb{
+  margin-right:30%;
+  height: 50px;
+  background-color: whitesmoke;
+}
+.nav-link
+{
+  color: solid black;
+  font-size: x-large;
+  font-family: Tahoma, Verdana, sans-serif;  
+}
+.bg-container{
+  height: 100vh;
+  background-image: url(https://res.cloudinary.com/dol6s2nbn/image/upload/v1670402098/n1_rh8u0y.webp);
+  background-size: cover;
+}
+header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+        }
+        a::after{
+  content: "";
+  width: 0;
+  height: 2px;
+  background-color: rgb(144, 0, 255);
+  margin: auto;
+  display: block;
+  transition: 1s;
+}
+a:hover::after{
+  width: 100%;
+}
+*{
+            font-family: 'Times New Roman', Times, serif;
+        }
+</style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <img class=bb src="https://res.cloudinary.com/dol6s2nbn/image/upload/v1670141355/anurag_zam6zp.png" alt="AU" >
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav ml-auto">
+        <a class="nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
+        {%if not user.is_authenticated%}
+        <a class="nav-link" href="/login">Login</a>
+        {%endif%}
+        <a class="nav-link" href="/register">Register</a>
+        <a class="nav-link" href="/view">View Status</a>
+        <a class="nav-link" href="/admin">Admin</a>
+        {%if user.is_authenticated%}
+        <a class="nav-link" href="/logout">Logout</a>
+        {%endif%}
+      </div>
+    </div>
+  </nav>
+  
+{%block main%}
+<div class="bg-container">
+  <header>
+    <h1 style="text-align: center; font-weight:600;">Welcome to the Complaint Management System</h1>
+  </header>
+  
+</div>
+
+{%endblock%}
+
+</body>
+</html>

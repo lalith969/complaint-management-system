@@ -1,0 +1,76 @@
+{%extends 'home.html'%}
+{%block main%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .cont1
+        {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+        }
+ .d1
+ {
+             padding: 12px;
+            border: 2px solid black;
+            border-radius: 30px;
+            background-color: #fafafa;
+            width: 350px;
+ }
+.abc
+{
+    margin-left: 1%;
+    color: red;
+
+}
+.l1
+{
+    padding: 7px;
+}
+.l2
+{
+    padding: 7px;
+}
+*{
+            font-family: 'Times New Roman', Times, serif;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="cont1">
+    <div class="container2">
+    <form method="post" class="d1">   
+        {%csrf_token%}
+        <div class="ab">
+        Name:
+        <input type="text" name="username" required placeholder="enter your name" class="form-control">
+        Email:
+        <input type="email" name="email" required placeholder="enter your email" class="form-control"> 
+        Password:
+        <input type="password" name="password" required placeholder="enter your password" class="form-control"> 
+        <div class="l1"></div><button  class="d2"  type="submit">Sign up</button>
+        <div class="l2"></div><a  href="/login">already have an account ?</a>
+        </div>
+
+    </form>
+    </div>
+    {%for i in messages%}
+    <div class="abc">
+    {{i}}
+    {%endfor%}
+</div>
+</div>
+</body>
+</html>
+{%endblock%}
+
+
+
